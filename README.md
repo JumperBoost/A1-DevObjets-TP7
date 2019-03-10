@@ -13,17 +13,19 @@ Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'es
 * Pour éviter des problèmes durant vos TPs d'informatique, vous devriez toujours **garder 300-400 Mo d'espace libre**.
 
 ## TP7
-#### _Thème : Création d’un projet Java et manipulations de quelques collections
+#### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
 Cliquez sur le lien ci-dessous pour faire votre fork privé du TP (**attention, pas de fork à la main !**):
+
 LIEN CLASSROOM À METTRE ICI
+
 Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 17 mars à 23h00**
+
 Ce (court) TP a deux buts :
 
-1. Améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6),
-en utilisant les différentes collections vues en cours
+1. Vous apprendre à construire un projet _Java_ avec votre IDE en utilisant une convention standard (ici _Maven_)
 
-2. Vous apprendre à construire un projet _Java_ avec votre IDE en utilisant une convention standard (ici _Maven_)
+2. Reprendre proprement l'[exercice 4 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#exercice-4) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en cours
 
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
@@ -73,11 +75,13 @@ vous retrouvez avec une fenêtre comme celle-ci :
 ![](ressources/FenetreAccueil.png)
 
 Cliquez sur _Create New Project_.
+
 2. Une fenêtre de création va apparaître et va rassemble à ceci :
 
 ![](ressources/CreationAvecMaven1.png)
 
-Choisissez bien le modèle _Maven_ et vérifiez que la SDK correspond à _Java 1.8_ ou une version supérieure.
+Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à _Java 1.8_ ou une version supérieure &rightarrow; _Next_
+
 3. Dans la fenêtre ci-dessous vous devez indiquer les informations permettant d'identifier votre projet parmi la liste
 de projets que vous avez déjà créée :
 
@@ -93,12 +97,14 @@ de projets que vous avez déjà créée :
   voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version
   finale, le mot-clé SNAPSHOT devra être enlevé.
   
-Cliquez sur _Next_
+Cliquez sur _Next_.
+
 4. La page suivante vous permet d'indiquer le répertoire où va résider votre projet :
 
 ![](ressources/CreationAvecMaven3.png)
 
-Après avoir indiqué, cliquez sur _Next_
+Après avoir indiqué le répertoire, cliquez sur _Finish_.
+
 5. Et voilà, vous venez de créer un projet _Java_ en suivant la convention Maven. La page que vous allez trouver, va rassembler
 à quelque chose comme ceci :
 
@@ -173,35 +179,37 @@ https://maven.apache.org/what-is-maven.html
 
 https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
-Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
-quand est-ce que vous aimerez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme ci-dessous devrait
+6. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
+quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme ci-dessous devrait
 apparaître :
 
-![](ressources/CreationMaven5.png)
-
-Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
+  ![](ressources/CreationMaven5.png)
+   
+   Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
 pris en compte immédiatement.
 
 
-Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail :
+7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail :
 
  * initialisez la racine de votre projet (qui s'appelle sans doute _TP7_) comme un dépôt Git
- * ajoutez votre dépôt privé distant `https://github.com/IUTInfoMontp-M2103/TP6-VOTRELOGIN` comme remote
- * synchronisez le dépôt distant avec votre dépôt local (avec `git pull` et `git push`)
+ * ajoutez votre dépôt privé distant `https://github.com/IUTInfoMontp-M2103/TP6-VOTRELOGIN` comme _remote_
+ * synchronisez le dépôt distant avec votre dépôt local (avec `git pull` et `git push`); ici vous serez amenés à faire
+ une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
  
-Et voilà ! Vous pouvez commencer à créer vos classes _Java_ et travailler comme d'habitude.
+Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement à créer vos classes _Java_ et programmer
+comme d'habitude.
 
 ### Exercice 2
 
 1. Copiez dans le répertoire `src/main/java` (respectivement `src/test/java`), l'ensemble des classes et interfaces métiers
  (respectivement de test) créées dans l'[exercice 4 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#exercice-4)
- et vérifiez que votre programme principal fonctionne correctement.
+ et vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
  
 2. Observez les collections que vous avez utilisées pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
 fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()`). Réflechissez aux inconvénients des
-structures de données choisies (voir également le [cours](http://pageperso.lif.univ-mrs.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf)).
-Que constatez-vous ?
-
+structures de données choisies (voir également le [cours](http://pageperso.lif.univ-mrs.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf)
+pour cela). Que constatez-vous ?
+   
 3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode
 `resoudre()` de la classe `Contexte`. Proposez une collection plus appropriée pour modéliser cette variable et modifiez
 (i.e. refactorisez) votre code de manière correspondante.
