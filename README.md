@@ -32,13 +32,13 @@ Ce (court) TP a deux buts :
 #### Organisation du projet Java - convention Maven
 
 Depuis les premiers TPs de POO nous avons utilisé la convention [Maven](https://fr.wikipedia.org/wiki/Apache_Maven).
-Pour rappel, on vous rappelle l'organisation du code dans cette convention :
+Pour rappel, voici l'organisation du code dans cette convention :
 
 ![](ressources/ArborescenceMaven.png)
 
 * l'intégralité des sources du projet se trouve dans le répertoire `src/`
 * le code source et fichiers source principaux se trouvent dans `src/main`
-* tous les fichiers de tests sont dans dans `src/test`
+* tous les fichiers de tests sont dans `src/test`
 
 ![](ressources/ArborescenceMavenDetail.png)
 
