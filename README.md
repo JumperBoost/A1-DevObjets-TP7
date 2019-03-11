@@ -4,6 +4,7 @@
 * **Enseignants:** [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr), [Sébastien Gagné](mailto:sebastien.gagne@umontpellier.fr), [Victor Poupet](mailto:victor.poupet@umontpellier.fr), [Petru Valicov](mailto:petru.valicov@umontpellier.fr), [Bruno Yun](mailto:bruno.yun@umontpellier.fr) 
 * Le [forum Piazza](https://piazza.com/class/jpv7gf0lltk4kc) de ce cours pour poser vos questions
 * [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
+
 Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
 * placez-vous dans votre `$HOME` et utilisez les commandes suivantes :
     * `du -sh` pour voir combien d'espace vous avez déjà utilisé
@@ -172,8 +173,7 @@ dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous po
     </build>
 </project>
 ```
-Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Vous pouvez discuter avec votre enseignant
-concernant les éléments contenus dans ce fichier. Il vous est également conseillé de lire la documentation là-dessus :
+Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
 
 https://maven.apache.org/what-is-maven.html
 
@@ -192,7 +192,7 @@ pris en compte immédiatement.
 7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail :
 
  * initialisez la racine de votre projet (qui s'appelle sans doute _TP7_) comme un dépôt Git
- * ajoutez votre dépôt privé distant `https://github.com/IUTInfoMontp-M2103/TP6-VOTRELOGIN` comme _remote_
+ * ajoutez votre dépôt privé distant `https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN` comme _remote_
  * synchronisez le dépôt distant avec votre dépôt local (avec `git pull` et `git push`); ici vous serez amenés à faire
  une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
  
@@ -209,7 +209,7 @@ comme d'habitude.
 fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()`). Réflechissez aux inconvénients des
 structures de données choisies (voir également le [cours](http://pageperso.lif.univ-mrs.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf)
 pour cela). Que constatez-vous ?
-   
+
 3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode
 `resoudre()` de la classe `Contexte`. Proposez une collection plus appropriée pour modéliser cette variable et modifiez
 (i.e. refactorisez) votre code de manière correspondante.
