@@ -189,12 +189,16 @@ apparaître :
 pris en compte immédiatement.
 
 
-7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail :
+7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail. On vous rappelle rapidement les commandes
+   à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
  * initialisez la racine de votre projet (qui s'appelle sans doute _TP7_) comme un dépôt Git
- * ajoutez votre dépôt privé distant `https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN` comme _remote_
- * synchronisez le dépôt distant avec votre dépôt local (avec `git pull` et `git push`); ici vous serez amenés à faire
- une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
+ * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN`
+ * rappelez l'intérêt du fichier `.gitignore` et ajoutez le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
+   pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que IntelliJ IDEA
+   (par exemple Eclipse) il faudra adapter le `.gitignore`.
+ * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
+   une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
  
 Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement à créer vos classes _Java_ et programmer
 comme d'habitude.
