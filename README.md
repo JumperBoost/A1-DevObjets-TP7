@@ -20,7 +20,7 @@ Cliquez sur le lien ci-dessous pour faire votre fork privé du TP (**attention, 
 
 https://classroom.github.com/a/fqHlolse
 
-Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 17 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 24 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
