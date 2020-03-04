@@ -1,8 +1,8 @@
 # ![](ressources/logo.jpeg) Bases de la programmation orientée objet 
 ### IUT Montpellier-Sète – Département Informatique
 * **Cours:** [M2103](http://cache.media.enseignementsup-recherche.gouv.fr/file/25/09/7/PPN_INFORMATIQUE_256097.pdf) - support [ici](https://github.com/IUTInfoMontp-M2103/Ressources)
-* **Enseignants:** [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr), [Sébastien Gagné](mailto:sebastien.gagne@umontpellier.fr), [Victor Poupet](mailto:victor.poupet@umontpellier.fr), [Petru Valicov](mailto:petru.valicov@umontpellier.fr), [Bruno Yun](mailto:bruno.yun@umontpellier.fr) 
-* Le [forum Piazza](https://piazza.com/class/jpv7gf0lltk4kc) de ce cours pour poser vos questions
+* **Enseignants:** [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr), [Sébastien Gagné](mailto:sebastien.gagne@umontpellier.fr), [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr), [Jérôme Palaysi](mailto:jerome.palaysi@umontpellier.fr), [Victor Poupet](mailto:victor.poupet@umontpellier.fr), [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
+* Le [forum Piazza](https://piazza.com/class/k52c8w685w3210) de ce cours pour poser vos questions
 * [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
 
 Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
@@ -20,13 +20,13 @@ Cliquez sur le lien ci-dessous pour faire votre fork privé du TP (**attention, 
 
 https://classroom.github.com/a/fqHlolse
 
-Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 24 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 22 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
 1. Vous apprendre à construire un projet _Java_ avec votre IDE en utilisant une convention standard (ici _Maven_)
 
-2. Reprendre proprement l'[exercice 4 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#exercice-4) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en cours
+2. Reprendre proprement la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en cours
 
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
@@ -81,7 +81,7 @@ Cliquez sur _Create New Project_.
 
 ![](ressources/CreationAvecMaven1.png)
 
-Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à _Java 1.8_ ou une version supérieure &rightarrow; _Next_
+Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 1.8_ &rightarrow; _Next_
 
 3. Dans la fenêtre ci-dessous vous devez indiquer les informations permettant d'identifier votre projet parmi la liste
 de projets que vous avez déjà créée :
@@ -161,14 +161,6 @@ dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous po
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.0</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
@@ -206,7 +198,7 @@ comme d'habitude.
 ### Exercice 2
 
 1. Copiez dans le répertoire `src/main/java` (respectivement `src/test/java`), l'ensemble des classes et interfaces métiers
- (respectivement de test) créées dans l'[exercice 4 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#exercice-4)
+ (respectivement de test) créées dans la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2)
  et vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
  
 2. Observez les collections que vous avez utilisées pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
