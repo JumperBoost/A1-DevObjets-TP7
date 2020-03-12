@@ -52,15 +52,14 @@ les systèmes de type UNIX. On aurait pu se contenter d'utiliser **make** si l'e
 conséquent et lourd à configurer à la main (la version du compilateur _Java_, la version du byte-code généré par le compilateur,
 les librairies de tests unitaires, etc.). D'autre part, utiliser _make_ pour respecter une organisation des répertoires
 et des packages _Java_ peut s'avérer long.
-Pour gérer tous ces aspects, plusieurs outil de _build_ sont recommandés :  [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
+Pour gérer tous ces aspects, plusieurs outils de _build_ sont recommandés :  [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
 [Gradle](https://fr.wikipedia.org/wiki/Gradle), [Ant](https://fr.wikipedia.org/wiki/Apache_Ant) et bien d'autres. Dans ce
 cours le choix a été porté sur *Maven*, mais on aurait pu très bien utiliser un autre outil (de même qu'on aurait pu
 utiliser _C++_, _C#_ ou encore _Python_ pour vous apprendre à programmer en orienté objet...). Vous avez peut-être
-remarqué qu'utiliser *Maven* permet de gérer facilement toutes les dépendances du projet. Le fait que l'ensemble de
-fichiers sources et exécutables soient organisés et que cette organisation soit faite de manière "transparente" est
+remarqué qu'utiliser *Maven* permet de gérer facilement toutes les dépendances du projet. Le fait que l'ensemble des
+fichiers sources et exécutables soit organisé et que cette organisation soit faite de manière "transparente" est
 clairement un bénéfice. Par exemple, vous n'avez pas eu à installer des logiciels spécifiques, autres que votre IDE pour
-faire fonctionner vos programmes. Il est également utile pour créer le fichier `.jar` du projet : une archive contenant
-l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
+faire fonctionner vos programmes. Il est également utile pour créer le fichier `.jar` du projet. Ce fichier est une archive contenant l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
  
 **Remarque** : L'utilisation de *Maven* est indépendante de votre IDE. Que ce soit [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 [Eclipse](https://www.eclipse.org/), ou [NetBeans](https://netbeans.org/), la plupart des IDEs de développement _Java_
