@@ -98,15 +98,15 @@ des projets que vous avez déjà créés :
 
     ![](ressources/CreationAvecMaven2.png)
   
-  * **GroupId** donne identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les
-  conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans
-   l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
+    * **GroupId** donne identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les
+      conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans
+      l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
   
-  * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
+    * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
   
-  * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser 1.0-SNAPSHOT. Cela
-  voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version
-  finale, le mot-clé SNAPSHOT devra être enlevé.
+    * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser 1.0-SNAPSHOT. Cela
+      voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version
+      finale, le mot-clé SNAPSHOT devra être enlevé.
   
     Cliquez sur _Next_.
 
@@ -175,10 +175,8 @@ des projets que vous avez déjà créés :
     </build>
 </project>
 ```
-    Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
-
+Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
     * https://maven.apache.org/what-is-maven.html
-
     * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
 6. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
