@@ -28,6 +28,8 @@ Ce (court) TP a deux buts :
 
 2. Reprendre proprement la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en [cours](https://pageperso.lis-lab.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf).
 
+Dans tous les cas, désormais le code de votre solution du TP6 devrait rester intact. Dans l'exercice 2, vous allez travaillez sur **une copie** du TP6 et vous allez l'améliorer.
+
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
 
@@ -204,16 +206,35 @@ Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement �
 comme d'habitude.
 
 ### Exercice 2
+Comme pour les TPs précédents, pour cet exercice vous marquerez vos réponses aux questions posées dans un fichier **reponses.md**.
 
-1. Copiez dans le répertoire `src/main/java` (respectivement `src/test/java`), l'ensemble des classes et interfaces métiers
- (respectivement de test) créées dans la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2)
- et vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
- 
-2. Observez les collections que vous avez utilisées pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
-fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()`). Réflechissez aux inconvénients des
-structures de données choisies (voir également le [cours](http://pageperso.lif.univ-mrs.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf)
-pour cela). Que constatez-vous ?
+Vous avez sans doute remarqué que la résolution des différentes configurations du Taquin (et même Hanoi) est assez lente. Le but de cet exercice est d'améliorer les temps d'exécution de vos algorithmes en choisissant mieux les structures de données, appelées **collections** en _Java_. Pour ce faire, il faut absolument étudier le [cours sur les collections Java](http://pageperso.lis-lab.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf) et lire la documentation dans la littérature ou sur le site d'Oracle. Voici une liste non-exhaustive des différentes classes et interfaces que vous devriez connaître après avoir travaillé sur le cours :
+[Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html),
+[Collections](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html), 
+[List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html),
+[ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html),
+[LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html), 
+[Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html), 
+[HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html), 
+[TreeSet](https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html),
+[LinkedHashSet](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html),
+[Queue](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html),
+[Deque](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html), 
+[PriorityQueue](https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html),
+[Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html),
+[HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html), 
+[TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), etc.
 
+1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
+
+    **Rappel important** : Le code de votre projet TP6 devrait rester intact, seuls les fichiers du TP7 peuvent être modifiés. 
+    
+2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
+fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réflechissez aux inconvénients de cette
+structure de données. Que constatez-vous lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est appropriée ici ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
+   
 3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode
-`resoudre()` de la classe `Contexte`. Proposez une collection plus appropriée pour modéliser cette variable et modifiez
-(i.e. refactorisez) votre code de manière correspondante.
+`mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin` et `Hanoi`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez
+(i.e. refactorisez) votre code de manière correspondante. Justifiez votre choix dans le fichier **reponses.md**.
+
+4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3  qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul.
