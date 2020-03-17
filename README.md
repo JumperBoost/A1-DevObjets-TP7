@@ -83,20 +83,20 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 Pour ce faire : _File_ &rightarrow; _Close Project_.
 Vous devez vous retrouvez avec une fenêtre comme celle-ci :
 
-![](ressources/FenetreAccueil.png)
+    ![](ressources/FenetreAccueil.png)
 
-Cliquez sur _Create New Project_.
+    Cliquez sur _Create New Project_.
 
 2. Une fenêtre de création va apparaître et va rassemble à ceci :
 
-![](ressources/CreationAvecMaven1.png)
+    ![](ressources/CreationAvecMaven1.png)
 
-Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 1.8_ &rightarrow; _Next_
+    Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 1.8_ &rightarrow; _Next_
 
 3. Dans la fenêtre ci-dessous vous devez indiquer les informations permettant d'identifier votre projet parmi la liste
 des projets que vous avez déjà créés :
 
-![](ressources/CreationAvecMaven2.png)
+    ![](ressources/CreationAvecMaven2.png)
   
   * **GroupId** donne identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les
   conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans
@@ -108,23 +108,23 @@ des projets que vous avez déjà créés :
   voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version
   finale, le mot-clé SNAPSHOT devra être enlevé.
   
-Cliquez sur _Next_.
+    Cliquez sur _Next_.
 
 4. La page suivante vous permet d'indiquer le répertoire où va résider votre projet :
 
-![](ressources/CreationAvecMaven3.png)
+    ![](ressources/CreationAvecMaven3.png)
 
-Après avoir indiqué le répertoire, cliquez sur _Finish_.
+    Après avoir indiqué le répertoire, cliquez sur _Finish_.
 
 5. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
 à quelque chose comme ceci :
 
-![](ressources/CreationAvecMaven4.png)
+    ![](ressources/CreationAvecMaven4.png)
 
-Notez le fichier XML qui vous sera affiché (`pom.xml`). Ce fichier, appelé
-[_Project Object Model_](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), contient
-l'ensemble des informations concernant votre projet et sa configuration. C'est ici que seront stockées l'ensemble des
-dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous pouvez remplir votre `pom.xml` comme suit :
+    Notez le fichier XML qui vous sera affiché (`pom.xml`). Ce fichier, appelé
+    [_Project Object Model_](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), contient
+    l'ensemble des informations concernant votre projet et sa configuration. C'est ici que seront stockées l'ensemble des
+    dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous pouvez remplir votre `pom.xml` comme suit :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -175,11 +175,11 @@ dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous po
     </build>
 </project>
 ```
-Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
+    Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
 
-https://maven.apache.org/what-is-maven.html
+    * https://maven.apache.org/what-is-maven.html
 
-https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+    * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
 6. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
 quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme celle-ci devrait
