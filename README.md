@@ -26,7 +26,7 @@ Ce (court) TP a deux buts :
 
 1. Vous apprendre à construire un projet _Java_ avec votre IDE en utilisant une convention standard (ici _Maven_)
 
-2. Reprendre proprement la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en cours
+2. Reprendre proprement la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en [cours](https://pageperso.lis-lab.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf).
 
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
@@ -48,29 +48,40 @@ Pour rappel, voici l'organisation du code dans cette convention :
 
 **Maven** est un system de _build_ et administration de projets Java. Pour faire une analogie vous pouvez le comparer
 à l'outil [make](https://fr.wikipedia.org/wiki/Make), qui existe depuis les années '70 et qui est largement utilisé dans
-les systèmes de type UNIX. On aurait pu se contenter d'utiliser **make** si l'ensemble des dépendances à gérer n'était pas
-conséquent et lourd à configurer à la main (la version du compilateur _Java_, la version du byte-code généré par le compilateur,
-les librairies de tests unitaires, etc.). D'autre part, utiliser _make_ pour respecter une organisation des répertoires
-et des packages _Java_ peut s'avérer long.
-Pour gérer tous ces aspects, plusieurs outils de _build_ sont recommandés :  [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
-[Gradle](https://fr.wikipedia.org/wiki/Gradle), [Ant](https://fr.wikipedia.org/wiki/Apache_Ant) et bien d'autres. Dans ce
-cours le choix a été porté sur *Maven*, mais on aurait pu très bien utiliser un autre outil (de même qu'on aurait pu
+les systèmes de type UNIX. Dans le cas des TPs et projet du cours de POO on aurait pu se contenter d'utiliser **make**
+si l'ensemble des dépendances à gérer n'était pas conséquent et lourd à configurer à la main :
+* la version du compilateur _Java_
+* la version du byte-code _Java_ généré par le compilateur afin de permettre une compatibilité entre des machines n'ayant pas la même version _Java_
+* les différentes librairies de tests unitaires (Junit 5.4 actuellement, mais une retro-compatibilité avec JUnit 4)
+* etc.
+
+D'autre part, utiliser _make_ pour respecter une organisation des répertoires et des packages _Java_ peut s'avérer long.
+
+Pour gérer tous ces aspects, plusieurs outils de _build_ sont recommandés :
+* [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
+* [Gradle](https://fr.wikipedia.org/wiki/Gradle)
+* [Ant](https://fr.wikipedia.org/wiki/Apache_Ant)
+* et bien d'autres.
+
+Dans ce cours le choix a été porté sur *Maven*, mais on aurait pu très bien utiliser un autre outil (de même qu'on aurait pu
 utiliser _C++_, _C#_ ou encore _Python_ pour vous apprendre à programmer en orienté objet...). Vous avez peut-être
 remarqué qu'utiliser *Maven* permet de gérer facilement toutes les dépendances du projet. Le fait que l'ensemble des
 fichiers sources et exécutables soit organisé et que cette organisation soit faite de manière "transparente" est
 clairement un bénéfice. Par exemple, vous n'avez pas eu à installer des logiciels spécifiques, autres que votre IDE pour
-faire fonctionner vos programmes. Il est également utile pour créer le fichier `.jar` du projet. Ce fichier est une archive contenant l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
+faire fonctionner vos programmes _Java_. Il est également utile pour créer le fichier `.jar` du projet -- une archive
+contenant l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
  
 **Remarque** : L'utilisation de *Maven* est indépendante de votre IDE. Que ce soit [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 [Eclipse](https://www.eclipse.org/), ou [NetBeans](https://netbeans.org/), la plupart des IDEs de développement _Java_
 ont une intégration facile de *Maven*.
 
 L'objectif de cet exercice est de vous apprendre à construire un projet _Java_ en suivant la convention *Maven*
-à partir de rien. Nous allons illustrer les étapes pour _IntelliJ IDEA_, libre à vous d'adapter ce tutoriel pour un autre
-IDE que vous préférez.
+à partir de rien. Nous allons illustrer les étapes pour [IntelliJ IDEA](https://www.jetbrains.com/idea/),
+libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
-1. Lancez l'IDE et fermer si nécessaire le projet sur lequel vous étiez en train de travailler précédemment. Vous devez
-vous retrouvez avec une fenêtre comme celle-ci :
+1. Lancez l'IDE et fermer esi nécessaire le projet sur lequel vous étiez en train de travailler précédemment.
+Pour ce faire : _File_ &rightarrow; _Close Project_.
+Vous devez vous retrouvez avec une fenêtre comme celle-ci :
 
 ![](ressources/FenetreAccueil.png)
 
@@ -83,7 +94,7 @@ Cliquez sur _Create New Project_.
 Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 1.8_ &rightarrow; _Next_
 
 3. Dans la fenêtre ci-dessous vous devez indiquer les informations permettant d'identifier votre projet parmi la liste
-de projets que vous avez déjà créée :
+des projets que vous avez déjà créés :
 
 ![](ressources/CreationAvecMaven2.png)
   
@@ -105,7 +116,7 @@ Cliquez sur _Next_.
 
 Après avoir indiqué le répertoire, cliquez sur _Finish_.
 
-5. Et voilà, vous venez de créer un projet _Java_ en suivant la convention Maven. La page que vous allez trouver, va rassembler
+5. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
 à quelque chose comme ceci :
 
 ![](ressources/CreationAvecMaven4.png)
@@ -171,25 +182,25 @@ https://maven.apache.org/what-is-maven.html
 https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
 6. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
-quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme ci-dessous devrait
-apparaître :
+quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme celle-ci devrait
+apparaître (en bas à droite de votre écran) :
 
-  ![](ressources/CreationMaven5.png)
+	![](ressources/CreationMaven5.png)
    
-   Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
+	Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
 pris en compte immédiatement.
 
 
-7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail. On vous rappelle rapidement les commandes
-   à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
+7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes
+   Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
- * initialisez la racine de votre projet (qui s'appelle sans doute _TP7_) comme un dépôt Git
- * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN`
- * rappelez l'intérêt du fichier `.gitignore` et ajoutez le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
-   pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que IntelliJ IDEA
-   (par exemple Eclipse) il faudra adapter le `.gitignore`.
- * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
-   une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
+    * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
+    * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN`
+    * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
+      pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+      (par exemple [Eclipse](https://www.eclipse.org/)) il faudra adapter le `.gitignore`.
+    * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
+      une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
  
 Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement à créer vos classes _Java_ et programmer
 comme d'habitude.
