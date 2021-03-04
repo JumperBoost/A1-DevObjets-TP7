@@ -1,26 +1,32 @@
-# ![](ressources/logo.jpeg) Bases de la programmation orientée objet 
+# ![](ressources/logo.jpeg)
+
+# Bases de la programmation orientée objet
+
 ### IUT Montpellier-Sète – Département Informatique
+
 * **Cours:** [M2103](http://cache.media.enseignementsup-recherche.gouv.fr/file/25/09/7/PPN_INFORMATIQUE_256097.pdf) - support [ici](https://github.com/IUTInfoMontp-M2103/Ressources)
-* **Enseignants:** [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr), [Sébastien Gagné](mailto:sebastien.gagne@umontpellier.fr), [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr), [Jérôme Palaysi](mailto:jerome.palaysi@umontpellier.fr), [Victor Poupet](mailto:victor.poupet@umontpellier.fr), [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
-* Le [forum Piazza](https://piazza.com/class/k52c8w685w3210) de ce cours pour poser vos questions
+* **Enseignants:** [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr), [Romain Lebreton](mailto:romain.lebreton@umontpellier.fr), [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr), [Victor Poupet](mailto:victor.poupet@umontpellier.fr), [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
+* Le [forum Piazza](https://piazza.com/class/kjifrxy1n0i3xa) de ce cours pour poser vos questions
 * [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
 
-Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
+<!--Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
+
 * placez-vous dans votre `$HOME` et utilisez les commandes suivantes :
     * `du -sh` pour voir combien d'espace vous avez déjà utilisé
     * `du -sh *` pour voir combien d'espace vous avez déjà utilisé pour chaque fichier (sans fichiers cachés)
     * `du -sch .[!.]* *` pour voir combien d'espace vous avez déjà utilisé pour chaque fichier, y compris les fichiers cachés
 * Supprimez les fichiers inutiles.
 * Pour éviter des problèmes durant vos TPs d'informatique, vous devriez toujours **garder 300-400 Mo d'espace libre**.
+-->
 
 ## TP7
 #### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
-Cliquez sur le lien ci-dessous pour faire votre fork privé du TP (**attention, pas de fork à la main !**):
+Comme d'habitude, cliquez sur le lien ci-dessous pour faire votre fork privé du TP avec GitHub Classroom :
 
-https://classroom.github.com/a/njGWjWqU
+https://classroom.github.com/a/4DMWOAWN
 
-Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 22 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 21 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
@@ -28,7 +34,7 @@ Ce (court) TP a deux buts :
 
 2. Reprendre proprement la [Partie 2 du TP6](https://github.com/IUTInfoMontp-M2103/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://github.com/IUTInfoMontp-M2103/TP6), en utilisant les différentes collections vues en [cours](https://pageperso.lis-lab.fr/~petru.valicov/Cours/M2103/BPOO_Genericite_Structures_de_Donnees_x4.pdf).
 
-Dans tous les cas, désormais le code de votre solution du TP6 devrait rester intact. Dans l'exercice 2, vous allez travaillez sur **une copie** du TP6 et vous allez l'améliorer.
+Dans tous les cas, désormais le code de votre solution du TP6 devrait rester intact. Dans l'exercice 2, vous allez travailler sur **une copie** du TP6 et vous allez l'améliorer.
 
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
@@ -46,7 +52,7 @@ Pour rappel, voici l'organisation du code dans cette convention :
 
 * le code source (ou code applicatif) se trouve dans `src/main/java`
 
-* le code source de test se trouve dans `src/test`
+* le code source de test se trouve dans `src/test/java`
 
 **Maven** est un system de _build_ et administration de projets Java. Pour faire une analogie vous pouvez le comparer
 à l'outil [make](https://fr.wikipedia.org/wiki/Make), qui existe depuis les années '70 et qui est largement utilisé dans
@@ -54,7 +60,7 @@ les systèmes de type UNIX. Dans le cas des TPs et projet du cours de POO on aur
 si l'ensemble des dépendances à gérer n'était pas conséquent et lourd à configurer à la main :
 * la version du compilateur _Java_
 * la version du byte-code _Java_ généré par le compilateur afin de permettre une compatibilité entre des machines n'ayant pas la même version _Java_
-* les différentes librairies de tests unitaires (Junit 5.4 actuellement, mais une retro-compatibilité avec JUnit 4)
+* les différentes librairies de tests unitaires (_Junit 5.4_ actuellement, mais une retro-compatibilité avec _JUnit 4_)
 * etc.
 
 D'autre part, utiliser _make_ pour respecter une organisation des répertoires et des packages _Java_ peut s'avérer long.
@@ -81,7 +87,7 @@ L'objectif de cet exercice est de vous apprendre à construire un projet _Java_ 
 à partir de rien. Nous allons illustrer les étapes pour [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
-1. Lancez l'IDE et fermer esi nécessaire le projet sur lequel vous étiez en train de travailler précédemment.
+1. Lancez l'IDE et fermez (si nécessaire) le projet sur lequel vous étiez en train de travailler précédemment.
 Pour ce faire : _File_ &rightarrow; _Close Project_.
 Vous devez vous retrouvez avec une fenêtre comme celle-ci :
 
@@ -100,15 +106,12 @@ des projets que vous avez déjà créés :
 
     ![](ressources/CreationAvecMaven2.png)
   
-    * **GroupId** donne identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les
-      conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans
-      l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
+    * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
   
     * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
   
     * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser 1.0-SNAPSHOT. Cela
-      voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version
-      finale, le mot-clé SNAPSHOT devra être enlevé.
+      voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version finale, le mot-clé SNAPSHOT devra être enlevé.
   
     Cliquez sur _Next_.
 
@@ -198,7 +201,7 @@ pris en compte immédiatement.
     * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN`
     * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
       pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-      (par exemple [Eclipse](https://www.eclipse.org/)) il faudra adapter le `.gitignore`.
+      ([Eclipse](https://www.eclipse.org/), [VSCode](https://code.visualstudio.com/), etc.) il faudra adapter le `.gitignore`.
     * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
       une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
  
