@@ -197,7 +197,7 @@ pris en compte immédiatement.
 7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes
    Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
-   * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
+   * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git avec `git init`
    * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin https://github.com/IUTInfoMontp-M2103/TP7-VOTRELOGIN`
    * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
    * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/) ([Eclipse](https://www.eclipse.org/), [VSCode](https://code.visualstudio.com/), etc.) il faudra adapter le `.gitignore`.
@@ -229,7 +229,7 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 
     **Rappel important** : Le code de votre projet TP6 devrait rester intact, seuls les fichiers du TP7 peuvent être modifiés. 
     
-2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
+2. Observez que jusque-là vous avez utilisé les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
 fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réflechissez aux inconvénients de cette
 structure de données. Que constatez-vous lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est appropriée ici ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
    
