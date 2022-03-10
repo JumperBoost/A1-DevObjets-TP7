@@ -41,8 +41,7 @@ Dans tous les cas, désormais le code de votre solution du TP6 devrait rester in
 ### Exercice 1
 #### Organisation du projet Java - convention Maven
 
-Depuis les premiers TPs de POO nous avons utilisé la convention [Maven](https://fr.wikipedia.org/wiki/Apache_Maven).
-Pour rappel, voici l'organisation du code dans cette convention :
+Depuis les premiers TPs de Développement Objets nous avons utilisé la convention [Maven](https://fr.wikipedia.org/wiki/Apache_Maven). Pour rappel, voici l'organisation du code dans cette convention :
 
 ![](ressources/ArborescenceMaven.png)
 
@@ -58,14 +57,13 @@ Pour rappel, voici l'organisation du code dans cette convention :
 
 **Maven** est un system de _build_ et administration de projets Java. Pour faire une analogie vous pouvez le comparer
 à l'outil [make](https://fr.wikipedia.org/wiki/Make), qui existe depuis les années '70 et qui est largement utilisé dans
-les systèmes de type UNIX. Dans le cas des TPs et projet du cours de POO on aurait pu se contenter d'utiliser **make**
-si l'ensemble des dépendances à gérer n'était pas conséquent et lourd à configurer à la main :
+les systèmes de type UNIX. Dans le cas des TPs et projet du cours de Développement Objet, on aurait pu se contenter d'utiliser **make** si l'ensemble des dépendances à gérer n'était pas conséquent et lourd à configurer à la main :
 * la version du compilateur _Java_
 * la version du byte-code _Java_ généré par le compilateur afin de permettre une compatibilité entre des machines n'ayant pas la même version _Java_
-* les différentes librairies de tests unitaires (_Junit 5.4_ actuellement, mais une retro-compatibilité avec _JUnit 4_)
+* les différentes librairies de tests unitaires (_Junit 5.4_ actuellement, mais une retro-compatibilité avec _JUnit 4_ parfois est nécessaire)
 * etc.
 
-D'autre part, utiliser _make_ pour respecter une organisation des répertoires et des packages _Java_ peut s'avérer long.
+D'autre part, utiliser **make** pour respecter une organisation des répertoires et des packages _Java_ peut s'avérer long.
 
 Pour gérer tous ces aspects, plusieurs outils de _build_ sont recommandés :
 * [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
@@ -91,7 +89,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
 1. Lancez l'IDE et fermez (si nécessaire) le projet sur lequel vous étiez en train de travailler précédemment.
    Pour ce faire : _File_ &rightarrow; _Close Project_.
-   Vous devez vous retrouvez avec une fenêtre comme celle-ci :
+   Vous devez vous retrouver avec une fenêtre comme celle-ci :
 
    ![](ressources/FenetreAccueil.png)
 
@@ -112,8 +110,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
     * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
 
-    * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser 1.0-SNAPSHOT. Cela
-      voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version finale, le mot-clé SNAPSHOT devra être enlevé.
+    * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser `1.0-SNAPSHOT`. Cela voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version définitive, le mot-clé SNAPSHOT devra être enlevé.
 
    Cliquez sur _Next_.
 
@@ -131,7 +128,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
    Notez le fichier XML qui vous sera affiché (`pom.xml`). Ce fichier, appelé
    [_Project Object Model_](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), contient
    l'ensemble des informations concernant votre projet et sa configuration. C'est ici que seront stockées l'ensemble des
-   dépendances de votre projet. Si vous utilisez la version 1.8 de _Java_, vous pouvez remplir votre `pom.xml` comme suit :
+   dépendances de votre projet. Si vous utilisez la version 17 de _Java_, vous pouvez remplir votre `pom.xml` comme suit :
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -233,11 +230,8 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 
    **Rappel important** : Le code de votre projet TP6 devrait rester intact, seuls les fichiers du TP7 peuvent être modifiés.
 
-2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les
-   fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réfléchissez aux inconvénients de cette structure de données. Que constatez-vous lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est pertinente ici, ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
+2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réfléchissez aux inconvénients de cette structure de données. Que constatez-vous lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est pertinente ici, ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
 
-3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode
-   `mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin` et `Hanoi`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez
-   (i.e. refactorisez) votre code de manière correspondante. Justifiez votre choix dans le fichier **reponses.md**.
+3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode `mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin` et `Hanoi`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez (i.e. refactorisez) votre code de manière correspondante. Justifiez votre choix dans le fichier **reponses.md**.
 
 4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3, qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul.
