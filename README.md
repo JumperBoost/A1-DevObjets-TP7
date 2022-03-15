@@ -222,7 +222,7 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 
 1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2-cr%C3%A9ation-dun-framework-de-r%C3%A9solution-de-puzzle). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
 
-   **Rappel important** : Le code de votre projet TP6 devrait rester intact, seuls les fichiers du TP7 peuvent être modifiés.
+   **Rappel important** : Le code de votre projet TP6 doit rester intact, seuls les fichiers du TP7 peuvent être modifiés.
 
 2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réfléchissez aux inconvénients de cette structure de données, notamment lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est pertinente ici, ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
 
