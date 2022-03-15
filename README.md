@@ -28,7 +28,7 @@
 ## TP7
 #### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
-Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 27 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **Dimanche 27 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
@@ -209,7 +209,7 @@ comme d'habitude.
 ### Exercice 2
 Comme pour les TPs précédents, pour cet exercice, vous marquerez vos réponses aux questions posées dans un fichier (**reponses.md** par exemple), que vous pouvez déposer à la racine du projet.
 
-Vous avez sans doute remarqué que la résolution des différentes configurations du Taquin (et même Hanoi) est assez lente. Le but de cet exercice est d'améliorer les temps d'exécution de vos algorithmes en choisissant mieux les structures de données, appelées **collections** en _Java_. Pour ce faire, il faut absolument étudier le [cours sur les collections Java](https://www.lirmm.fr/~pvalicov/Cours/dev-objets/Genericite_Structures_de_Donnees_x4.pdf) et lire la documentation dans la littérature ou sur le site d'Oracle. Voici une liste non exhaustive des différentes classes et interfaces que vous devriez connaître après avoir travaillé sur le cours :
+Vous avez sans doute remarqué que la résolution des différentes configurations du Taquin (et même Hanoi) est assez lente. Le but de cet exercice est d'améliorer les temps d'exécution de vos algorithmes en choisissant mieux les structures de données, appelées **collections** en _Java_. Pour ce faire, il faut absolument étudier le [cours sur les collections Java](https://www.lirmm.fr/~pvalicov/Cours/dev-objets/Genericite_Structures_de_Donnees_x4.pdf) et lire la documentation dans la littérature ou sur le site d'Oracle. Voici une liste non exhaustive des différentes classes et interfaces que vous devriez connaître après avoir travaillé sur le cours (et le [projet](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/aventuriers-du-rail) !) :
 [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html),
 [Collections](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html),
 [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html),
