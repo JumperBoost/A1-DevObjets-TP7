@@ -101,10 +101,11 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
    Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 17_ &rightarrow; _Next_
 
-3. Dans la fenêtre ci-dessous vous devez indiquer les informations permettant d'identifier votre projet parmi la liste
-   des projets que vous avez déjà créés :
+3. Une fenêtre comme cell-ci se présente : 
 
    ![](ressources/CreationAvecMaven2.png)
+   
+   Vous devez indiquer le répertoire où va résider votre projet, ainsi que les informations permettant d'identifier ce projet parmi la liste des projets que vous avez déjà créés :
 
     * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
 
@@ -112,18 +113,12 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
     * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser `1.0-SNAPSHOT`. Cela voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version définitive, le mot-clé SNAPSHOT devra être enlevé.
 
-   Cliquez sur _Next_.
+   Cliquez sur _Finish_.
 
-4. La page suivante vous permet d'indiquer le répertoire où va résider votre projet :
-
-   ![](ressources/CreationAvecMaven3.png)
-
-   Après avoir indiqué le répertoire, cliquez sur _Finish_.
-
-5. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
+4. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
    à quelque chose comme ceci :
 
-   ![](ressources/CreationAvecMaven4.png)
+   ![](ressources/CreationAvecMaven3.png)
 
    Notez le fichier XML qui vous sera affiché (`pom.xml`). Ce fichier, appelé
    [_Project Object Model_](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), contient
@@ -183,7 +178,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
     * https://maven.apache.org/what-is-maven.html
     * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
-6. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
+5. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
    quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme celle-ci devrait
    apparaître (en bas à droite de votre écran) :
 
@@ -192,8 +187,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
    Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
    pris en compte immédiatement.
 
-
-7. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
+6. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
     * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
     * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/VOTRELOGIN/TP7` (si vous passez par _ssh_)
