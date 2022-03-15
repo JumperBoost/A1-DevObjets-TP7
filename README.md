@@ -34,7 +34,7 @@ Ce (court) TP a deux buts :
 
 1. Vous apprendre à construire un projet _Java_ avec votre IDE en utilisant une convention standard (ici _Maven_)
 
-2. Reprendre proprement la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6), en utilisant les différentes collections vues en [cours](https://www.lirmm.fr/~pvalicov/Cours/dev-objets/Genericite_Structures_de_Donnees_x4.pdf).
+2. Reprendre proprement la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2-cr%C3%A9ation-dun-framework-de-r%C3%A9solution-de-puzzle) dans ce nouveau projet et améliorer l'efficacité de votre framework de résolution de jeux construit au [TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6), en utilisant les différentes collections vues en [cours](https://www.lirmm.fr/~pvalicov/Cours/dev-objets/Genericite_Structures_de_Donnees_x4.pdf).
 
 Dans tous les cas, désormais le code de votre solution du TP6 devrait rester intact. Dans l'exercice 2, vous allez travailler sur **une copie** du TP6 et vous allez l'améliorer.
 
@@ -220,7 +220,7 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html),
 [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), etc.
 
-1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
+1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2-cr%C3%A9ation-dun-framework-de-r%C3%A9solution-de-puzzle). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
 
    **Rappel important** : Le code de votre projet TP6 devrait rester intact, seuls les fichiers du TP7 peuvent être modifiés.
 
