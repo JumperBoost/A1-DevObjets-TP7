@@ -228,4 +228,4 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 
 3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode `mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin`, `Hanoi` et `Sudoku`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez (i.e. refactorisez) votre code de manière correspondante. Justifiez votre choix dans le fichier **reponses.md**.
 
-4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3, qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul.
+4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3, qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul. De même essayez de voir les améliorations pour le Sudoku et Hanoi.
