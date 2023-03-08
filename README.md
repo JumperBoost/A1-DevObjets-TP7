@@ -28,7 +28,7 @@
 ## TP7
 #### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
-Date limite de rendu de votre code sur le dépôt GitLab : **Dimanche 27 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 26 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
@@ -39,9 +39,9 @@ Ce (court) TP a deux buts :
 Dans tous les cas, désormais le code de votre solution du TP6 devrait rester intact. Dans l'exercice 2, vous allez travailler sur **une copie** du TP6 et vous allez l'améliorer.
 
 ### Exercice 1
-#### Organisation du projet Java - convention Maven
+#### Organisation d'un projet Java - convention Maven
 
-Depuis les premiers TPs de Développement Objets nous avons utilisé la convention [Maven](https://fr.wikipedia.org/wiki/Apache_Maven). Pour rappel, voici l'organisation du code dans cette convention :
+Depuis les premiers TPs de Développement Orienté Objets, nous avons utilisé la convention [Maven](https://fr.wikipedia.org/wiki/Apache_Maven). Pour rappel, voici l'organisation du code dans cette convention :
 
 ![](ressources/ArborescenceMaven.png)
 
@@ -60,24 +60,19 @@ Depuis les premiers TPs de Développement Objets nous avons utilisé la conventi
 les systèmes de type UNIX. Dans le cas des TPs et projet du cours de Développement Objet, on aurait pu se contenter d'utiliser **make** si l'ensemble des dépendances à gérer n'était pas conséquent et lourd à configurer à la main :
 * la version du compilateur _Java_
 * la version du byte-code _Java_ généré par le compilateur afin de permettre une compatibilité entre des machines n'ayant pas la même version _Java_
-* les différentes librairies de tests unitaires (_Junit 5.4_ actuellement, mais une retro-compatibilité avec _JUnit 4_ parfois est nécessaire)
+* les différentes librairies de tests unitaires (_Junit 5.9_ actuellement, mais une retro-compatibilité avec _JUnit 4_ parfois est nécessaire)
 * etc.
 
 D'autre part, utiliser **make** pour respecter une organisation des répertoires et des packages _Java_ peut s'avérer long.
 
 Pour gérer tous ces aspects, plusieurs outils de _build_ sont recommandés :
 * [Maven](https://fr.wikipedia.org/wiki/Apache_Maven),
-* [Gradle](https://fr.wikipedia.org/wiki/Gradle)
-* [Ant](https://fr.wikipedia.org/wiki/Apache_Ant)
+* [Gradle](https://fr.wikipedia.org/wiki/Gradle),
+* [Ant](https://fr.wikipedia.org/wiki/Apache_Ant),
 * et bien d'autres.
 
-Dans ce cours le choix a été porté sur *Maven*, mais on aurait pu très bien utiliser un autre outil (de même qu'on aurait pu
-utiliser _C++_, _C#_ ou encore _Python_ pour vous apprendre à programmer en orienté objet...). Vous avez peut-être
-remarqué qu'utiliser *Maven* permet de gérer facilement toutes les dépendances du projet. Le fait que l'ensemble des
-fichiers sources et exécutables soit organisé et que cette organisation soit faite de manière "transparente" est
-clairement un bénéfice. Par exemple, vous n'avez pas eu à installer des logiciels spécifiques, autres que votre IDE pour
-faire fonctionner vos programmes _Java_. Il est également utile pour créer le fichier `.jar` du projet -- une archive
-contenant l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
+Dans ce cours le choix a été porté sur *Maven*, mais on aurait pu très bien utiliser un autre outil (de même qu'on aurait pu utiliser _C++_, _C#_ ou encore _Python_ pour vous apprendre à programmer en orienté objet...). Vous avez peut-être
+remarqué qu'utiliser *Maven* permet de gérer facilement toutes les dépendances du projet. Le fait que l'ensemble des fichiers sources et exécutables soit organisé et que cette organisation soit faite de manière "transparente" est clairement un bénéfice. Par exemple, vous n'avez pas eu à installer des logiciels spécifiques, autres que votre IDE pour faire fonctionner vos programmes _Java_. Il est également utile pour créer le fichier `.jar` du projet -- une archive contenant l'ensemble de classes _Java_ et de ressources d'un projet informatique (comme `.AppImage` sous Linux ou `.exe` sous Windows).
 
 **Remarque** : L'utilisation de *Maven* est indépendante de votre IDE. Que ce soit [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 [Eclipse](https://www.eclipse.org/), ou [NetBeans](https://netbeans.org/), la plupart des IDEs de développement _Java_
@@ -95,23 +90,23 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
    Cliquez sur _Create New Project_.
 
-2. Une fenêtre de création va apparaître et va rassemble à ceci :
+2. Une fenêtre de création va apparaître et va rassembler à ceci :
 
    ![](ressources/CreationAvecMaven1.png)
 
    Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 17_ &rightarrow; _Next_
 
-3. Une fenêtre comme cell-ci se présente : 
+3. Une fenêtre comme cell-ci se présente :
 
    ![](ressources/CreationAvecMaven2.png)
-   
-   Vous devez indiquer le répertoire où va résider votre projet, ainsi que les informations permettant d'identifier ce projet parmi la liste des projets que vous avez déjà créés :
 
-    * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
+   Vous devez indiquer le répertoire où va résider votre projet, ainsi que les informations permettant d'identifier ce projet parmi la liste des projets, que vous avez déjà créés :
 
-    * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
+   * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
 
-    * **version** - le nom de version si ce code est destiné à être distribué. Ici vous pouvez laisser `1.0-SNAPSHOT`. Cela voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version définitive, le mot-clé SNAPSHOT devra être enlevé.
+   * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
+
+   * **version** - le nom de version si ce code est destiné à être distribué. Ici, vous pouvez laisser `1.0-SNAPSHOT`. Cela voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version définitive, le mot-clé SNAPSHOT devra être enlevé.
 
    Cliquez sur _Finish_.
 
@@ -143,19 +138,19 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.4.0-M1</version>
+                <version>5.9.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>
-                <version>5.4.0-M1</version>
+                <version>5.9.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>5.4.0-M1</version>
+                <version>5.9.2</version>
             </dependency>
         </dependencies>
         <build>
@@ -175,8 +170,8 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
     </project>
     ```
    Pour les autres versions de _Java_ il faudra adapter les lignes correspondantes. Il vous est également conseillé de lire la documentation là-dessus :
-    * https://maven.apache.org/what-is-maven.html
-    * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+   * https://maven.apache.org/what-is-maven.html
+   * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
 5. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
    quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme celle-ci devrait
@@ -189,16 +184,15 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
 6. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
-    * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
-    * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/VOTRELOGIN/TP7` (si vous passez par _ssh_)
-    * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
-      une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
-    * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
-      pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-      ([Eclipse](https://www.eclipse.org/), [VSCode](https://code.visualstudio.com/), etc.) il faudra adapter le `.gitignore`.
+   * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
+   * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/VOTRELOGIN/TP7` (si vous passez par _ssh_)
+   * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
+     une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
+   * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
+     pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+     ([Eclipse](https://www.eclipse.org/), [VSCode](https://code.visualstudio.com/), etc.) il faudra adapter le `.gitignore`.
 
-Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement à créer vos classes _Java_ et programmer
-comme d'habitude.
+Désormais tout devrait être fonctionnel et vous pouvez commencer sereinement à créer vos classes _Java_ et programmer comme d'habitude.
 
 ### Exercice 2
 Comme pour les TPs précédents, pour cet exercice, vous marquerez vos réponses aux questions posées dans un fichier (**reponses.md** par exemple), que vous pouvez déposer à la racine du projet.
@@ -220,12 +214,12 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html),
 [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), etc.
 
-1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2-cr%C3%A9ation-dun-framework-de-r%C3%A9solution-de-puzzle). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
+1. Copiez dans le répertoire `src/main/java` l'ensemble des classes et interfaces métiers créées dans la [Partie 2 du TP6](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/TP6#partie-2-cr%C3%A9ation-dun-framework-de-r%C3%A9solution-de-puzzle). Également, copiez dans le répertoire `src/test/java` l'ensemble de classes de tests. Vérifiez que votre programme principal fonctionne correctement. Pensez à mettre toutes ces classes dans un package approprié. Par exemple `fr.umontpellier.iut` si vous comptez vous arrêtez à l'implémentation des algorithmes de résolution ; et `fr.umontpellier.iut.framework` ou `fr.umontpellier.iut.traitement` si vous voulez ajouter d'autres composants (comme une interface graphique que vous mettriez dans `fr.umontpellier.iut.affichage`).
 
    **Rappel important** : Le code de votre projet TP6 doit rester intact, seuls les fichiers du TP7 peuvent être modifiés.
 
-2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réfléchissez aux inconvénients de cette structure de données, notamment lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est pertinente ici, ou choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
+2. Observez que jusque-là vous avez utilisée les `ArrayList` de _Java_ pour modéliser les variables `dejaVus`, `frontiere`, ainsi que les fils d'une configuration de jeu donnée (retournés par la méthode `genererFils()` de `JeuPuzzle`). Réfléchissez aux inconvénients de cette structure de données, notamment lorsqu'on ajoute un élément dans `dejaVus` ou `frontiere` ? Est-ce qu'une `ArrayList` est pertinente ici, ou bien choisir une autre collection _Java_ serait plus approprié pour votre algorithme ?
 
-3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode `mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin`, `Hanoi` et `Sudoku`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez (i.e. refactorisez) votre code de manière correspondante. Justifiez votre choix dans le fichier **reponses.md**.
+3. Rappelez-vous la spécification de la variable `dejaVus` et notez le test d'appartenance à `dejaVus` dans la méthode `mettreAJour(...)` de la classe `Couple`. De manière directe ou indirecte, pour les `ArrayList` ce test d'appartenance se fait en utilisant la méthode `boolean equals(Object o)` redéfinie dans vos classes `Taquin`, `Hanoi` et `Sudoku`. Proposez une collection plus appropriée pour modéliser la variable `dejaVus` et modifiez (i.e. refactorisez) votre code de façon correspondante. Justifiez votre choix dans le fichier **reponses.md**.
 
-4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3, qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul. De même essayez de voir les améliorations pour le Sudoku et Hanoi.
+4. Après avoir fait les changements nécessaires, essayez de résoudre les taquins 3 X 3, qui étaient auparavant particulièrement lents et vérifiez si vous obtenez des améliorations des temps de calcul. De même, essayez de voir les améliorations pour le Sudoku et Hanoi.
