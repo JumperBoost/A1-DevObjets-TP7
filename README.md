@@ -175,7 +175,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 6. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
    * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
-   * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/VOTRELOGIN/TP7` (si vous passez par _ssh_)
+   * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/etu/VOTRELOGIN/TP7` (si vous passez par _ssh_)
    * synchronisez le dépôt distant avec votre dépôt local (avec `git pull origin master` et `git push`); ici vous serez amenés à faire
      une fusion (_merge_) avec le dépôt distant forké par le lien qui vous a été fourni.
    * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
