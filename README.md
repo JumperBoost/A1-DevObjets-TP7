@@ -28,7 +28,7 @@
 ## TP7
 #### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
-Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 26 mars à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 2 avril à 23h00**
 
 Ce (court) TP a deux buts :
 
