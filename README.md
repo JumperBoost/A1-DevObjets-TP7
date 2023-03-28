@@ -92,23 +92,17 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
 2. Une fenêtre de création va apparaître et va rassembler à ceci :
 
-   ![](ressources/CreationAvecMaven1.png)
+   ![](ressources/CreationAvecMaven.png)
 
-   Choisissez le modèle _Maven_ et vérifiez que la SDK correspond à une version supérieure à _Java 17_ &rightarrow; _Next_
+   Choisissez _Maven_ comme _Build System_ et vérifiez que la JDK correspond à une version supérieure à _Java 17_ et le répertoire où va résider votre projet.
 
-3. Une fenêtre comme cell-ci se présente :
+   Également, dans le menu _Advanced Settings_, vous devez indiquer les informations permettant d'identifier ce projet parmi la liste des projets, que vous avez déjà créés :
 
-   ![](ressources/CreationAvecMaven2.png)
+    * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
 
-   Vous devez indiquer le répertoire où va résider votre projet, ainsi que les informations permettant d'identifier ce projet parmi la liste des projets, que vous avez déjà créés :
+    * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet." &rightarrow; _Next_
 
-   * **GroupId** donne un identifiant à votre projet. Puisque nous construisons un projet _Java_, il faudrait respecter les conventions de nommage du langage. Ici la convention est la même que pour les packages : on indique le domaine dans l'ordre inverse. Par exemple, `org.apache.maven`, `org.apache.commons`. Pour ce TP vous allez choisir `fr.umontpellier.iut`.
-
-   * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet.
-
-   * **version** - le nom de version si ce code est destiné à être distribué. Ici, vous pouvez laisser `1.0-SNAPSHOT`. Cela voudra dire qu'il s'agit de la version _en cours de développement_ de la version 1.0 de votre logiciel. Pour la version définitive, le mot-clé SNAPSHOT devra être enlevé.
-
-   Cliquez sur _Finish_.
+   Cliquez sur _Create_.
 
 4. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
    à quelque chose comme ceci :
