@@ -163,16 +163,13 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
    * https://maven.apache.org/what-is-maven.html
    * https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
-5. Après avoir effectué les premières modifications du fichier POM de votre projet, il faudra penser indiquer à votre IDE
-   quand est-ce que vous aimeriez qu'il prenne en compte les changements de ce fichier. Une fenêtre comme celle-ci devrait
-   apparaître (en bas à droite de votre écran) :
+    Après avoir effectué les premières modifications du fichier POM de votre projet, il se peut que votre IDE demande quand est-ce que vous souhaitez qu'il prenne en compte les changements de ce fichier. Ainsi, une fenêtre comme celle-ci pourrait apparaître (en bas à droite de votre écran) :
 
    ![](ressources/CreationMaven5.png)
 
-   Pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit
-   pris en compte immédiatement.
+   Si cette fenêtre apparaît, pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit pris en compte immédiatement.
 
-6. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
+5. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
    * initialisez la racine de votre projet _Java_ (qui s'appelle sans doute _TP7_) comme un dépôt Git
    * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/etu/VOTRELOGIN/TP7` (si vous passez par _ssh_)
