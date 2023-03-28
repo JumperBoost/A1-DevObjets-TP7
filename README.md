@@ -107,7 +107,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 4. Et voilà, vous venez de créer un projet _Java_ en suivant la convention **Maven**. La page que vous allez trouver, va rassembler
    à quelque chose comme ceci :
 
-   ![](ressources/CreationAvecMaven3.png)
+   ![](ressources/CreationAvecMaven2.png)
 
    Notez le fichier XML qui vous sera affiché (`pom.xml`). Ce fichier, appelé
    [_Project Object Model_](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), contient
@@ -159,9 +159,9 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
     Après avoir effectué les premières modifications du fichier POM de votre projet, il se peut que votre IDE demande quand est-ce que vous souhaitez qu'il prenne en compte les changements de ce fichier. Ainsi, une fenêtre comme celle-ci pourrait apparaître (en bas à droite de votre écran) :
 
-   ![](ressources/CreationMaven5.png)
+    ![](ressources/CreationMaven3.png)
 
-   Si cette fenêtre apparaît, pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit pris en compte immédiatement.
+    Si cette fenêtre apparaît, pour faire plus simple, vous pouvez choisir l'option _Enable Auto-Import_ afin que tout changement du fichier POM soit pris en compte immédiatement.
 
 5. Maintenant, que votre projet est prêt, n'oubliez pas de versionner votre travail avec Git. On vous rappelle rapidement les commandes Git à exécuter dans le terminal (attention, si vous utilisez votre IDE pour faire cela, lisez/vérifiez avant de cliquer...) :
 
