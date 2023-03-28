@@ -102,7 +102,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
     * **artifactId** est le nom de l'exécutable (fichier `.jar`) qui pourra être créé à partir de ce projet." &rightarrow; _Next_
    
-    **Important :** Pensez à laisser cocher la case _Create Git repository_.
+    **Important :** Pensez à laisser cochée la case _Create Git repository_.
 
    Cliquez sur _Create_.
 
@@ -170,7 +170,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
    * ajoutez votre dépôt privé distant comme _remote_ : `git remote add origin git@gitlabinfo.iutmontp.univ-montp2.fr:dev-objets/etu/VOTRELOGIN/TP7` (si vous passez par _ssh_)
    * synchronisez le dépôt distant avec votre dépôt local en faisat une fusion (_merge_) avec le dépôt distant :
      * `git pull origin master`
-     * `git push --set-upstream origin master`; .
+     * `git push --set-upstream origin master`
    * rappelez-vous l'intérêt du fichier `.gitignore` et ajoutez-le à la racine de votre projet. Vous pouvez récupérer un modèle utilisé
      pour un autre TP fait auparavant (par exemple celui du TP6). Pour les utilisateurs des IDEs autres que [IntelliJ IDEA](https://www.jetbrains.com/idea/)
      ([Eclipse](https://www.eclipse.org/), [VSCode](https://code.visualstudio.com/), etc.) il faudra adapter le `.gitignore`.
