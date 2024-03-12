@@ -6,14 +6,14 @@
 
 * [**Support de cours**](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/Ressources)
 * **Enseignants:**
-  [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr),
-  [Romain Lebreton](mailto:romain.lebreton@umontpellier.fr),<!--[Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),-->
+  [Malo Gasquet](mailto:malo.gasquet@umontpellier.fr),
+  [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),
   [Cyrille Nadal](mailto:cyrille.nadal@umontpellier.fr),
   [Victor Poupet](mailto:victor.poupet@umontpellier.fr),
   [Gilles Trombettoni](mailto:gilles.trombettoni@umontpellier.fr),
   [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
-* Le [forum Piazza](https://piazza.com/class/ld2tzi5k82via) de ce cours pour poser vos questions
-* [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
+* Le [forum Piazza](https://piazza.com/class/lrahb0patze3u4) de ce cours pour poser vos questions
+* [Email](mailto:petru.valicov@umontpellier.fr) pour toute question concernant le cours.
 
 <!--Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
 
@@ -28,7 +28,7 @@
 ## TP7
 #### _Thème : Création d’un projet Java et manipulations de quelques collections_
 
-Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 2 avril à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 24 mars à 23h00**
 
 Ce (court) TP a deux buts :
 
