@@ -94,7 +94,7 @@ libre à vous d'adapter ce tutoriel pour un autre IDE que vous préférez.
 
    ![](ressources/CreationAvecMaven.png)
 
-   Choisissez _Maven_ comme _Build System_ et vérifiez que la JDK correspond à une version supérieure à _Java 17_ et le répertoire où va résider votre projet.
+   Choisissez _Maven_ comme _Build System_, vérifiez que la JDK correspond à la version _Java 17_ et précisez le répertoire où va résider votre projet.
 
    Également, dans le menu _Advanced Settings_, vous devez indiquer les informations permettant d'identifier ce projet parmi la liste des projets, que vous avez déjà créés :
 
