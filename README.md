@@ -210,7 +210,6 @@ Vous avez sans doute remarqué que la résolution des différentes configuration
 ### Exercice 3
 
 Nous allons maintenant voir comment générer une archive `.jar` contenant les classes compilées de votre programme.
-
 Cette archive peut être utilisée de deux manières :
 
 * Afin de distribuer une **librairie**, utilisable par d'autres programmes (l'archive est importée dans le projet et ses classes sont alors utilisables).
@@ -227,57 +226,57 @@ Comme tout bon gestionnaire de projet, **Maven** dispose d'outils (commandes) po
 
 1. Sur **IntelliJ**, ouvre le panneau latéral dédié à **Maven** en cliquant sur le bouton **Maven** en haut à droite de votre interface. Ouvrez ensuite le dossier **Lifecycle**.
 
-Sur cette interface, on retrouve diverses commandes qui peuvent être exécutées sur le projet, par exemple :
+    Sur cette interface, on retrouve diverses commandes qui peuvent être exécutées sur le projet, par exemple :
 
-* `compile` : pour compiler notre code sources en `.class` (qui se retrouvent dans le dossier **target**).
+   * `compile` : pour compiler notre code sources en `.class` (qui se retrouvent dans le dossier **target**).
 
-* `test` : pour exécuter les tests unitaires du projet.
+   * `test` : pour exécuter les tests unitaires du projet.
 
-* `package` : pour créer une archive `.jar` à partir des classes compilées de notre application et des informations contenues dans le fichier **.pom.xml** du projet. Avant d'exécuter cette commande, il faut s'assurer que les classes soient compilées !
+   * `package` : pour créer une archive `.jar` à partir des classes compilées de notre application et des informations contenues dans le fichier **.pom.xml** du projet. Avant d'exécuter cette commande, il faut s'assurer que les classes soient compilées !
 
-Il est aussi possible d'utiliser directement ces commandes dans un terminal (en se plaçant à la racine du projet) via l'exécutable `mvn`, par exemple :
-
-```bash
-mvn package
-```
+    Il est aussi possible d'utiliser directement ces commandes dans un terminal (en se plaçant à la racine du projet) via l'exécutable `mvn`, par exemple :
+    
+    ```bash
+    mvn package
+    ```
 
 2. Remaniez le `main` de la classe `AppJeuxPuzzle.java` afin que celui-ci résolve un taquin 3x3 (dont vous préciserez la configuration en dur) et affiche sa solution.
 
 3. Exécutez la commande `compile` puis `package`. Retrouvez l'archive `.jar` générée dans le dossier `target`.
 
-Le nom de l'archive correspond aux informations que vous avez précisées dans le fichier `pom.xml` :
+    Le nom de l'archive correspond aux informations que vous avez précisées dans le fichier `pom.xml` :
 
-* Tout d'abord, on retrouve la valeur de `artifactId` (TP7).
+   * Tout d'abord, on retrouve la valeur de `artifactId` (TP7).
 
-* Puis, la `version` (pour le moment, `1.0-SNAPSHOT`).
+   * Puis, la `version` (pour le moment, `1.0-SNAPSHOT`).
 
-4. Dans un terminal, tentez d'exécuter l'archive **jar** que vous venez de générer. Vous devriez obtenir un message d'erreur !
+4. Dans un terminal, tentez d'exécuter l'archive **jar** que vous venez de générer. Vous devriez obtenir un message d'erreur.
 
-Le message d'erreur indique "aucun attribut manifest principal dans TP7-1.0-SNAPSHOT.jar". En résumé, cela signifie que `java` ne sait pas quelle classe il faut exécuter dans votre archive ! C'est-à-dire, celle qui contient le `main`. Quand don distribue une **librairie**, il n'y a pas besoin d'avoir une telle classe, car l'archive a pour but d'être utilisée par d'autres programmes et pas à être exécutée directement. Cependant, quand on distribue une application, il faut donc obligatoirement indiquer ce **point d'entrée**.
-
-En explorant le **contenu** de l'archive, vous pourrez notamment retrouver un fichier `META-INF/MANIFEST.MF`. Ce fichier contient des informations sur l'archive. C'est notamment ici qu'on indique la classe qui doit être exécutée dans le cas où l'archive contient une application.
-
-Au lieu d'indiquer cette classe à la main en modifiant ce fichier, il est possible d'ajouter les informations requises dans notre fichier `pom.xml` qui complètera alors le fichier `MANIFEST.MF` adéquatement lors de la génération de l'archive.
+    Le message d'erreur indique "aucun attribut manifest principal dans TP7-1.0-SNAPSHOT.jar". En résumé, cela signifie que `java` ne sait pas quelle classe il faut exécuter dans votre archive ! C'est-à-dire, celle qui contient le `main`. Quand don distribue une **librairie**, il n'y a pas besoin d'avoir une telle classe, car l'archive a pour but d'être utilisée par d'autres programmes et pas à être exécutée directement. Cependant, quand on distribue une application, il faut donc obligatoirement indiquer ce **point d'entrée**.
+    
+    En explorant le **contenu** de l'archive, vous pourrez notamment retrouver un fichier `META-INF/MANIFEST.MF`. Ce fichier contient des informations sur l'archive. C'est notamment ici qu'on indique la classe qui doit être exécutée dans le cas où l'archive contient une application.
+    
+    Au lieu d'indiquer cette classe à la main en modifiant ce fichier, il est possible d'ajouter les informations requises dans notre fichier `pom.xml` qui complètera alors le fichier `MANIFEST.MF` adéquatement lors de la génération de l'archive.
 
 5. Dans le fichier `pom.xml`, ajoutez le code suivant dans la section `<plugins>...</plugins>` :
 
-```xml
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-jar-plugin</artifactId>
-    <configuration>
-        <archive>
-            <manifest>
-                <addClasspath>true</addClasspath>
-                <classpathPrefix>libs/</classpathPrefix>
-                <mainClass>fr.umontpellier.iut.AppJeuxPuzzle</mainClass>
-            </manifest>
-        </archive>
-    </configuration>
-</plugin>
-```
+    ```xml
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>libs/</classpathPrefix>
+                    <mainClass>fr.umontpellier.iut.AppJeuxPuzzle</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+    ```
 
-La partie essentielle de ce code est l'attribut `mainClass` : il indique quelle classe doit être exécutée lors de l'exécution de l'archive `.jar`. Comme expliqué précédemment, cette classe doit donc contenir un `main`.
+    La partie essentielle de ce code est l'attribut `mainClass` : il indique quelle classe doit être exécutée lors de l'exécution de l'archive `.jar`. Comme expliqué précédemment, cette classe doit donc contenir un `main`.
 
 6. Ré-exécutez la commande `package` afin de régénérer l'archive `.jar` de l'application.
 
@@ -285,6 +284,6 @@ La partie essentielle de ce code est l'attribut `mainClass` : il indique quelle 
 
 8. Dans un terminal, tentez de nouveau d'exécuter l'archive **jar** que vous venez de générer. Cette fois-ci, cela devrait fonctionner !
 
-Bien sûr, dans son état actuel, notre application est limitée, car le puzzle choisi (et sa configuration) sont codés 'en dur" dans le programme. Idéalement, il faudrait faire intervenir l'utilisateur. Soit par chargements d'options (accessibles dans le tableau de chaines de caractères `args` du `main`, un peu comme en `C`) ou bien en utilisant les entrées/sorties (en utilisant `System.in` avec un Scanner ou autre pour les entrées). On pourrait aussi imaginer un système où des puzzles sont chargés à partir de fichier, proposer un menu, etc.
+    Bien sûr, dans son état actuel, notre application est limitée, car le puzzle choisi (et sa configuration) sont codés 'en dur" dans le programme. Idéalement, il faudrait faire intervenir l'utilisateur. Soit par chargements d'options (accessibles dans le tableau de chaines de caractères `args` du `main`, un peu comme en _C_) ou bien en utilisant les entrées/sorties (en utilisant `System.in` avec un `Scanner` ou autre pour les entrées). On pourrait aussi imaginer un système où des puzzles sont chargés à partir de fichier, proposer un menu, etc.
 
-Note à part : comme notre application affiche des données dans la sortie standard (`Sytem.out`), nous sommes obligés d'exécuter notre archive depuis un terminal pour en observer le déroulement (et éventuellement interagir avec lui). Dans le cas d'une application possédant une interface graphique (comme vous allez bientôt le voir dans les cours de `JavaFX`) il sera aussi possible de simplement double-cliquer sur votre archive (comme un programme "normal") pour l'exécuter et afficher l'interface. En soi, double-cliquer sur l'archive fonctionne aussi avec un programme produisant seulement des affichages en console dans la sortie standard, mais vous ne verrez simplement rien, car le programme ne s'exécutera pas dans un terminal visible.
+    Note à part : comme notre application affiche des données dans la sortie standard (`Sytem.out`), nous sommes obligés d'exécuter notre archive depuis un terminal pour en observer le déroulement et éventuellement interagir avec lui. Dans le cas d'une application possédant une interface graphique (comme vous allez bientôt le voir dans les cours de [JavaFX](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/)) il sera aussi possible de simplement double-cliquer sur votre archive (comme un programme "normal") pour l'exécuter et afficher l'interface. En soi, double-cliquer sur l'archive fonctionne aussi avec un programme produisant seulement des affichages en console dans la sortie standard, mais vous ne verrez simplement rien, car le programme ne s'exécutera pas dans un terminal visible.
