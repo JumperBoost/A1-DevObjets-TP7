@@ -1,6 +1,8 @@
 package fr.umontpellier.iut;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Hanoi implements JeuPuzzle {
     private final ArrayList<Integer> tour1;
@@ -42,8 +44,8 @@ public class Hanoi implements JeuPuzzle {
     }
 
     @Override
-    public ArrayList<Hanoi> genererFils() {
-        ArrayList<Hanoi> fils = new ArrayList<>();
+    public Set<Hanoi> genererFils() {
+        Set<Hanoi> fils = new HashSet<>();
         // Tour 1
         if(!tour1.isEmpty()) {
             if(tour2.isEmpty() || estUnDeplacementValide(tour1, tour2))

@@ -1,9 +1,7 @@
 package fr.umontpellier.iut;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 public class Sudoku implements JeuPuzzle {
     private final int[][] grille;
@@ -26,7 +24,7 @@ public class Sudoku implements JeuPuzzle {
     }
 
     public boolean verifierSousCarre(int i, int j) {
-        ArrayList<Integer> valeurs = new ArrayList<>();
+        Set<Integer> valeurs = new HashSet<>();
         int[] debCarre = getDebCarre(i, j);
         for(int x = debCarre[0]; x < debCarre[0] + sousCarreTaille; x++) {
             for(int y = debCarre[1]; y < debCarre[1] + sousCarreTaille; y++) {
@@ -39,7 +37,7 @@ public class Sudoku implements JeuPuzzle {
     }
 
     public boolean verifierLigne(int i) {
-        ArrayList<Integer> valeurs = new ArrayList<>();
+        Set<Integer> valeurs = new HashSet<>();
         for(int j = 0; j < grille[i].length; j++) {
             if(valeurs.contains(grille[i][j]) || grille[i][j] == 0)
                 return false;
@@ -49,7 +47,7 @@ public class Sudoku implements JeuPuzzle {
     }
 
     public boolean verifierColonne(int j) {
-        ArrayList<Integer> valeurs = new ArrayList<>();
+        Set<Integer> valeurs = new HashSet<>();
         for(int i = 0; i < grille.length; i++) {
             if(valeurs.contains(grille[i][j]) || grille[i][j] == 0)
                 return false;
@@ -59,11 +57,11 @@ public class Sudoku implements JeuPuzzle {
     }
 
     @Override
-    public ArrayList<Sudoku> genererFils() {
-        ArrayList<Sudoku> fils = new ArrayList<>();
+    public Set<Sudoku> genererFils() {
+        Set<Sudoku> fils = new HashSet<>();
         int[] trou = getTrou();
         if(trou != null) {
-            ArrayList<Integer> valPoss = getValPoss(trou[0], trou[1]);
+            Set<Integer> valPoss = getValPoss(trou[0], trou[1]);
             int[][] grilleCopie;
             for(int val : valPoss) {
                 grilleCopie = copieMatrice(grille);
@@ -86,12 +84,12 @@ public class Sudoku implements JeuPuzzle {
         return matriceCopie;
     }
 
-    public ArrayList<Integer> getValPoss(int i, int j) {
+    public Set<Integer> getValPoss(int i, int j) {
         if(grille[i][j] != 0)
-            return new ArrayList<>();
+            return new HashSet<>();
 
         int[] debCarre = getDebCarre(i, j);
-        ArrayList<Integer> valPoss = new ArrayList<>();
+        Set<Integer> valPoss = new HashSet<>();
         // Ajout des valeurs possibles
         for(int k = 1; k <= sousCarreTaille*sousCarreTaille; k++)
             valPoss.add(k);
@@ -100,21 +98,21 @@ public class Sudoku implements JeuPuzzle {
         for(int x = debCarre[0]; x < debCarre[0] + sousCarreTaille; x++)
             for (int y = debCarre[1]; y < debCarre[1] + sousCarreTaille; y++)
                 if(x != i && y != j && grille[x][y] != 0)
-                    valPoss.remove((Integer) grille[x][y]);
+                    valPoss.remove(grille[x][y]);
 
         // Ligne
         int[] debCarreY;
         for(int y = 0; y < grille.length; y++) {
             debCarreY = getDebCarre(i, j);
             if (debCarreY != debCarre && grille[i][y] != 0)
-                valPoss.remove((Integer) grille[i][y]);
+                valPoss.remove(grille[i][y]);
         }
 
         // Colonne
         for(int x = 0; x < grille.length; x++) {
             int[] debCarreX = getDebCarre(x, j);
             if (debCarreX != debCarre && grille[x][j] != 0)
-                valPoss.remove((Integer) grille[x][j]);
+                valPoss.remove(grille[x][j]);
         }
 
         return valPoss;

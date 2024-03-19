@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -56,7 +57,7 @@ class HanoiTest {
         Hanoi hanoiFils1 = new Hanoi(tour1CommunAuxFils, tour2Fils1, new ArrayList<>(), 3);
         Hanoi hanoiFils2 = new Hanoi(tour1CommunAuxFils, new ArrayList<>(), tour3Fils2, 3);
 
-        ArrayList<Hanoi> res = hanoi.genererFils();
+        Set<Hanoi> res = hanoi.genererFils();
         assertTrue(res.size()==2 && res.contains(hanoiFils1) && res.contains(hanoiFils2));
     }
 
@@ -80,7 +81,7 @@ class HanoiTest {
         Hanoi fils1 = new Hanoi(tour1Fils1, new ArrayList<>(), hanoi.getTour3(), 3);
         Hanoi fils2 = new Hanoi(tour1Fils2, hanoi.getTour2(), new ArrayList<>(), 3);
         Hanoi fils3 = new Hanoi(hanoi.getTour1(), tour2Fils3, new ArrayList<>(), 3);
-        ArrayList<Hanoi> res = hanoi.genererFils();
+        Set<Hanoi> res = hanoi.genererFils();
         assertTrue(res.size()==3 && res.contains(fils1) && res.contains(fils2) && res.contains(fils3));
     }
 

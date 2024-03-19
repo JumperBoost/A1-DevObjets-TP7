@@ -20,7 +20,7 @@ public class Couple {
      * et l'ensemble des configurations déjà vues.
      */
     public void mettreAJour(Queue<Couple> frontiere, Set<JeuPuzzle> dejaVus) {
-        ArrayList<?> taquinsFils = puzzle.genererFils();
+        Set<?> taquinsFils = puzzle.genererFils();
             for(Object object : taquinsFils) {
             Couple couple_object = new Couple((JeuPuzzle) object, this);
             // Ajouter si inexistant

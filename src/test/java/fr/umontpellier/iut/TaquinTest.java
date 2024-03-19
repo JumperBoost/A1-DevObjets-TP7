@@ -3,6 +3,7 @@ package fr.umontpellier.iut;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -111,7 +112,7 @@ class TaquinTest {
     public void test_generer_Fils_coin_3_X_3() {
         int[][] data = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
         Taquin t = new Taquin(data);
-        ArrayList<Taquin> res = t.genererFils();
+        Set<Taquin> res = t.genererFils();
 
         ArrayList<Taquin> res2 = new ArrayList<>();
         int[][] datafils1 = {{1, 2, 3}, {4, 5, 0}, {7, 8, 6}};
