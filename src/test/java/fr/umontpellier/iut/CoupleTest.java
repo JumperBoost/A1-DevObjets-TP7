@@ -2,7 +2,7 @@ package fr.umontpellier.iut;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -35,10 +35,10 @@ class CoupleTest {
 
         int[][] datafils1 = {{1, 2, 3}, {4, 5, 0}, {7, 8, 6}};
         Taquin fils1 = new Taquin(datafils1);
-        ArrayList<JeuPuzzle> dejavu = new ArrayList<>();
+        Set<JeuPuzzle> dejavu = new HashSet<>();
         dejavu.add(fils1);
 
-        ArrayList<Couple> frontiere = new ArrayList<>();
+        Queue<Couple> frontiere = new LinkedList<>();
 
         c.mettreAJour(frontiere, dejavu);
         assertTrue(frontiere.size() == 1 && dejavu.size() == 2);

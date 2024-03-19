@@ -1,6 +1,8 @@
 package fr.umontpellier.iut;
 
 import java.util.ArrayList;
+import java.util.Queue;
+import java.util.Set;
 
 @SuppressWarnings("Duplicates")
 public class Couple {
@@ -17,7 +19,7 @@ public class Couple {
      * Vérifie si les fils du taquin sont déjà vus et met à jour la frontière
      * et l'ensemble des configurations déjà vues.
      */
-    public void mettreAJour(ArrayList<Couple> frontiere, ArrayList<JeuPuzzle> dejaVus) {
+    public void mettreAJour(Queue<Couple> frontiere, Set<JeuPuzzle> dejaVus) {
         ArrayList<?> taquinsFils = puzzle.genererFils();
             for(Object object : taquinsFils) {
             Couple couple_object = new Couple((JeuPuzzle) object, this);

@@ -1,7 +1,6 @@
 package fr.umontpellier.iut;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @SuppressWarnings("Duplicates")
 public class Contexte {
@@ -15,16 +14,16 @@ public class Contexte {
     }
 
     public void resoudre() {
-        ArrayList<JeuPuzzle> dejaVus = new ArrayList<>(List.of(puzzle));
-        ArrayList<Couple> frontieres = new ArrayList<>(List.of(new Couple(puzzle, null)));
+        Set<JeuPuzzle> dejaVus = new HashSet<>(List.of(puzzle));
+        Queue<Couple> frontieres = new LinkedList<>(List.of(new Couple(puzzle, null)));
         Couple couple;
         while (!frontieres.isEmpty()) {
-            couple = frontieres.get(0);
+            couple = frontieres.poll();
             if (couple.getPuzzle().estGagnant()) {
                 solution = couple.getListeDeMouvements();
                 return;
             }
-            frontieres.remove(0);
+            frontieres.remove(couple);
             couple.mettreAJour(frontieres, dejaVus);
         }
     }  // Résolution en file : exploration de l'arbre en largeur
