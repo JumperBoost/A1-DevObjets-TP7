@@ -268,7 +268,6 @@ Comme tout bon gestionnaire de projet, **Maven** dispose d'outils (commandes) po
             <archive>
                 <manifest>
                     <addClasspath>true</addClasspath>
-                    <classpathPrefix>libs/</classpathPrefix>
                     <mainClass>fr.umontpellier.iut.AppJeuxPuzzle</mainClass>
                 </manifest>
             </archive>
