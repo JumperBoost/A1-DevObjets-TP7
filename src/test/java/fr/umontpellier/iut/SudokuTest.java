@@ -2,7 +2,8 @@ package fr.umontpellier.iut;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -194,9 +195,9 @@ class SudokuTest {
     @Test
     public void test_valeurs_possibles_trou_non_evident() {
         Sudoku sudoku = new Sudoku(grille_sudoku22_incomplete2());
-        ArrayList<Integer> res = new ArrayList<>();
+        Set<Integer> res = new HashSet<>();
         res.add(2); res.add(3);
-        ArrayList<Integer> actual = sudoku.getValPoss(1, 0);
+        Set<Integer> actual = sudoku.getValPoss(1, 0);
         assertEquals(res, actual);
     }
 
@@ -204,9 +205,9 @@ class SudokuTest {
     @Test
     public void test_valeurs_possibles_trou_evident() {
         Sudoku sudoku = new Sudoku(grille_sudoku22_incomplete2());
-        ArrayList<Integer> res = new ArrayList<>();
+        Set<Integer> res = new HashSet<>();
         res.add(2);
-        ArrayList<Integer> actual = sudoku.getValPoss(1, 1);
+        Set<Integer> actual = sudoku.getValPoss(1, 1);
         assertEquals(res, actual);
     }
 
@@ -214,15 +215,15 @@ class SudokuTest {
     @Test
     public void test_valeurs_possibles_case_remplie() {
         Sudoku sudoku = new Sudoku(grille_sudoku22_incomplete2());
-        ArrayList<Integer> actual = sudoku.getValPoss(3, 3);
-        assertEquals(new ArrayList<>(), actual);
+        Set<Integer> actual = sudoku.getValPoss(3, 3);
+        assertEquals(new HashSet<>(), actual);
     }
 
     
     @Test
     public void test_generer_fils_pas_de_trou() {
         Sudoku sudoku = new Sudoku(grille_sudoku22_gagnante());
-        assertEquals(new ArrayList<Sudoku>(), sudoku.genererFils());
+        assertEquals(new HashSet<Sudoku>(), sudoku.genererFils());
     }
 
     
@@ -232,7 +233,7 @@ class SudokuTest {
         Sudoku fils1 = new Sudoku(grille_sudoku22_incomplete_fils1());
         Sudoku fils2 = new Sudoku(grille_sudoku22_incomplete_fils2());
 
-        ArrayList<Sudoku> res = new ArrayList<>();
+        Set<Sudoku> res = new HashSet<>();
         res.add(fils1); res.add(fils2);
 
         assertEquals(res, sudoku.genererFils());
@@ -243,10 +244,10 @@ class SudokuTest {
     public void test_generer_fils_jusqua_config_gagnante_2x2() {
         Sudoku configGagnante = new Sudoku(grille_sudoku22_gagnante());
         Sudoku sudoku = new Sudoku(grille_sudoku22_incomplete_fils2());
-        ArrayList<Sudoku> fils = sudoku.genererFils();
-        ArrayList<Sudoku> dernier = fils.get(0).genererFils();
+        Set<Sudoku> fils = sudoku.genererFils();
+        Set<Sudoku> dernier = fils.iterator().next().genererFils();
 
-        assertEquals(configGagnante, dernier.get(0));
+        assertEquals(configGagnante, dernier.iterator().next());
     }
 
     
@@ -254,7 +255,7 @@ class SudokuTest {
     public void test_generer_fils_max_config_fils_possibles_3x3() {
         int[][] g = new int[9][9];
         Sudoku sudoku = new Sudoku(g);
-        ArrayList<Sudoku> fils = sudoku.genererFils();
+        Set<Sudoku> fils = sudoku.genererFils();
         assertEquals(9, fils.size());
     }
 

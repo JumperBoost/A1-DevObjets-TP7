@@ -1,7 +1,8 @@
 package fr.umontpellier.iut;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 @SuppressWarnings("Duplicates")
 public class Taquin implements JeuPuzzle {
@@ -26,9 +27,9 @@ public class Taquin implements JeuPuzzle {
      * @return la liste des configurations obtenues avec un seul mouvement
      * à partir du Taquin courant
      */
-    public ArrayList<Taquin> genererFils() {
+    public Set<Taquin> genererFils() {
         int[] trou = trouverTrou();
-        ArrayList<Taquin> valides = new ArrayList<>();
+        Set<Taquin> valides = new HashSet<>();
         if(trou[1]-1 >= 0 && tableau[trou[0]][trou[1]-1] != 0)
             valides.add(genererTaquin(trou, trou[0], trou[1]-1));
         if(trou[0]-1 >= 0 && tableau[trou[0]-1][trou[1]]!= 0)

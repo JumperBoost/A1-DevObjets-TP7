@@ -1,8 +1,8 @@
 package fr.umontpellier.iut;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 public interface JeuPuzzle {
     boolean estGagnant();
-    ArrayList<? extends JeuPuzzle> genererFils();
+    Set<? extends JeuPuzzle> genererFils();
 }
