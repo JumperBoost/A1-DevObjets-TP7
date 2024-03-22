@@ -32,6 +32,19 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.0</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>fr.umontpellier.iut.AppJeuxPuzzle</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <version>3.3.0</version>
+            </plugin>
         </plugins>
     </build>
 </project>
